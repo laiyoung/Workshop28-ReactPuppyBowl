@@ -29,8 +29,15 @@ body {
 }
 
 .search{
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: left;
+  align-items: flex-end;
   text-align: left;
+  margin-bottom: 15px;
+  
+
+
 }
 
 .form {
