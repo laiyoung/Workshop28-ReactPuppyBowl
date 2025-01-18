@@ -21,6 +21,10 @@ getPlayers()
 export function addPlayer(player) {
   console.log(`addPlayers: ${player}`);
 }
+addPlayer()
+
+
 export function deletePlayer(playerID) {
   console.log(`addPlayer: ${playerID} `);
 }
+deletePlayer()

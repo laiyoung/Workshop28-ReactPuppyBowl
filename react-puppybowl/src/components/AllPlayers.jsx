@@ -15,7 +15,11 @@ export default function AllPlayers() {
     getData();
   }, []);
 
-  return players.map((player) => {
-    return <SinglePlayer key={player.id} player={player} />;
-  });
+  return (
+    <div className="article">
+      {players.map((player) => {
+        return <SinglePlayer key={player.id} player={player} />;
+      })}
+    </div>
+  );
 }
