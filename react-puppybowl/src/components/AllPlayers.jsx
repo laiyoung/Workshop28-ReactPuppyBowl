@@ -18,7 +18,12 @@ export default function AllPlayers() {
   return (
     <div className="article">
       {players.map((player) => {
-        return <SinglePlayer key={player.id} player={player} />;
+        return (
+          <SinglePlayer
+            key={player.id}
+            player={player}
+          />
+        );
       })}
     </div>
   );

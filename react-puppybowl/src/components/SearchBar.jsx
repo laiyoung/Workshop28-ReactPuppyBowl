@@ -1,8 +1,14 @@
 import React from "react";
 
 export default function SearchBar() {
+  const [search, setSearch] = useState("");
+
         function handleSearch() {}
-        function handleChange(){}
+        
+        function handleChange(){
+
+
+        }
    return (
         <>
         <div className="search"> 
