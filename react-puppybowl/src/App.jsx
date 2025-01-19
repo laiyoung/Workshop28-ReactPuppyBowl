@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import AllPlayers from "./components/AllPlayers";
 import SinglePlayer from "./components/SinglePlayer";
@@ -7,8 +7,6 @@ import NewPlayerForm from "./components/NewPlayerForm";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  
-
   return (
     <>
       <h1>Welcome to Puppy Bowl!</h1>
@@ -17,10 +15,14 @@ function App() {
       </div>
       <div>
         {" "}
-        <NewPlayerForm ></NewPlayerForm>
+        <NewPlayerForm></NewPlayerForm>
       </div>
+
       <div>
-        <AllPlayers ></AllPlayers>
+        <Routes>
+          <Route path="/" element={<AllPlayers />} />
+          <Route path="/players/:id" element={<SinglePlayer />} />
+        </Routes>
       </div>
     </>
   );

@@ -2,8 +2,9 @@ import React from "react";
 import { deletePlayer } from "../api";
 
 export default function SinglePlayer({ player }) {
-  function handleDelete() {
-    deletePlayer(player.id);
+  async function handleDelete() {
+    await deletePlayer(player.id);
+    location.reload();
   }
 
   return (
@@ -13,7 +14,6 @@ export default function SinglePlayer({ player }) {
       <button>Player Details</button>
       <p>Player ID: {player.id} </p>
       <button onClick={handleDelete}>Delete</button>
-      
     </div>
   );
 }

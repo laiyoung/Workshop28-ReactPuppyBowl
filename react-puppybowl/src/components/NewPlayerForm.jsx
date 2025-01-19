@@ -22,6 +22,7 @@ export default function NewPlayerForm() {
     event.preventDefault();
     const response = await addPlayer(newPlayer);
     setNewPlayer(await response);
+    location.reload();
   }
 
   return (

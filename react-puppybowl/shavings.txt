@@ -31,3 +31,8 @@ selectedContact ? (
     image: "",
   });
   }
+
+  function handleDelete() {
+     deletePlayer(player.id);
+  
+  }
