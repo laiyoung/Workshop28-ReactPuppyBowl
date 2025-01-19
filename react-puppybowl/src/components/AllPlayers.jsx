@@ -3,8 +3,8 @@ import SinglePlayer from "./SinglePlayer";
 import { useEffect, useState } from "react";
 import { getPlayers } from "../api";
 
-export default function AllPlayers() {
-  const [players, setPlayers] = useState([]);
+export default function AllPlayers({players, setPlayers}) {
+
 
   useEffect(() => {
     async function getData() {

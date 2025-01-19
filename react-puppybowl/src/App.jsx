@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import AllPlayers from "./components/AllPlayers";
@@ -7,11 +8,13 @@ import NewPlayerForm from "./components/NewPlayerForm";
 import SearchBar from "./components/SearchBar";
 
 function App() {
+  const [players, setPlayers] = useState([]);
+
   return (
     <>
       <h1>Welcome to Puppy Bowl!</h1>
       <div>
-        <SearchBar></SearchBar>{" "}
+        <SearchBar players={players}></SearchBar>{" "}
       </div>
       <div>
         {" "}
@@ -20,7 +23,10 @@ function App() {
 
       <div>
         <Routes>
-          <Route path="/" element={<AllPlayers />} />
+          <Route
+            path="/"
+            element={<AllPlayers players={players} setPlayers={setPlayers} />}
+          />
           <Route path="/players/:id" element={<SinglePlayer />} />
         </Routes>
       </div>
