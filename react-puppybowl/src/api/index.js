@@ -18,13 +18,38 @@ export async function getPlayers() {
 getPlayers()
 
 
-export function addPlayer(player) {
-  console.log(`addPlayers: ${player}`);
+export async function addPlayer(newPlayer) {
+  try {
+    const response = await fetch(API_URL + "/players", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPlayer),
+    });
+    const result = await response.json();
+    return result
+  } catch (err) {
+    console.error("Oops, something went wrong with adding that player!", err);
+  }
 }
-addPlayer()
 
 
-export function deletePlayer(playerID) {
-  console.log(`addPlayer: ${playerID} `);
+
+export async function deletePlayer(playerId) {
+  try {
+    console.log(playerId);
+    await fetch(API_URL + "/players/" + playerId, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  } catch (err) {
+    console.error(
+      `Whoops, trouble removing player #${playerId} from the roster!`,
+      err
+    );
+  }
 }
-deletePlayer()
+

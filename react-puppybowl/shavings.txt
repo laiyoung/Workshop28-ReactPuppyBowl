@@ -1,0 +1,33 @@
+Ternary for navigation:
+selectedContact ? (
+    <div>
+      <h1>{selectedContact.name}</h1>
+      <h3>Address: </h3>
+      <p>{selectedContact.address.street}</p>
+      <p>{selectedContact.address.suite}</p>
+      <p>
+        {selectedContact.address.city}, {selectedContact.address.zipcode}
+      </p>
+      <h4>Website: {selectedContact.website} </h4>
+      <button
+        onClick={() => {
+          location.reload();
+        }}
+      >
+        Back to List
+      </button>
+      {/* This button's actually just refreshing the pg., not going back. */}
+    </div>
+  ) : (
+    <div>An issue occured with data procurement. Please inspect the console.</div>
+  );
+
+
+  Saving the original form state that won't update:
+  export default function NewPlayerForm() {
+  const [newPlayer, setNewPlayer] = useState({
+    name: "",
+    breed: "",
+    image: "",
+  });
+  }
