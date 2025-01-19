@@ -1,5 +1,10 @@
+import React from "react";
+import { deletePlayer } from "../api";
+
 export default function SinglePlayer({ player }) {
-  function handleDelete() {}
+  function handleDelete() {
+    deletePlayer(player.id);
+  }
 
   return (
     <div className="player-card">

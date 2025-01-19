@@ -53,7 +53,8 @@ export default function NewPlayerForm() {
             onChange={handleChange}
             placeholder="Image URL"
           />
-          <button type="submit">Add Puppy</button>
+         <button type="submit"> Add New Puppy </button>
+
         </form>
       </div>
     </>

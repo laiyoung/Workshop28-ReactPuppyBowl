@@ -15,7 +15,7 @@ export async function getPlayers() {
     console.error("Uh oh, trouble fetching players!", error);
   }
 }
-getPlayers()
+// getPlayers()
 
 
 export async function addPlayer(newPlayer) {
@@ -38,7 +38,7 @@ export async function addPlayer(newPlayer) {
 
 export async function deletePlayer(playerId) {
   try {
-    console.log(playerId);
+    // console.log(playerId);
     await fetch(API_URL + "/players/" + playerId, {
       method: "DELETE",
       headers: {
