@@ -6,7 +6,7 @@ export default function SearchBar({ players }) {
 
   function handleSearch() {
     const result = players.filter((player) =>
-      player.name.includes(search)
+      player.name.toLowerCase().includes(search.toLowerCase())
     );
     console.log(result);
   }
