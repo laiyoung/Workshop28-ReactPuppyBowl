@@ -15,7 +15,7 @@ function App() {
   async function getData() {
     const playerData = await getPlayers();
     setPlayers(playerData);
-    console.log(playerData);
+    // console.log(playerData);
   }
 
   return (

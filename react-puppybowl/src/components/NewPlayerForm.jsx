@@ -24,6 +24,7 @@ export default function NewPlayerForm({getData}) {
     setNewPlayer(await response);
     // location.reload();
     getData();
+    event.target.reset();
   }
 
   return (
