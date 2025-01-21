@@ -1,17 +1,12 @@
 import React from "react";
 import SinglePlayer from "./SinglePlayer";
 import { useEffect, useState } from "react";
-import { getPlayers } from "../api";
 
-export default function AllPlayers({players, setPlayers}) {
+
+export default function AllPlayers({players, getData}) {
 
 
   useEffect(() => {
-    async function getData() {
-      const playerData = await getPlayers();
-      setPlayers(playerData);
-      console.log(playerData);
-    }
     getData();
   }, []);
 
@@ -22,6 +17,7 @@ export default function AllPlayers({players, setPlayers}) {
           <SinglePlayer
             key={player.id}
             player={player}
+            getData = {getData} 
           />
         );
       })}

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { addPlayer } from "../api";
 
-export default function NewPlayerForm() {
+export default function NewPlayerForm({getData}) {
   const [newPlayer, setNewPlayer] = useState({
     name: "",
     breed: "",
@@ -22,7 +22,8 @@ export default function NewPlayerForm() {
     event.preventDefault();
     const response = await addPlayer(newPlayer);
     setNewPlayer(await response);
-    location.reload();
+    // location.reload();
+    getData();
   }
 
   return (

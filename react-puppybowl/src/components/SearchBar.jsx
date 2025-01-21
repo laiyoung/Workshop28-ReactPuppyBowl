@@ -1,14 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import SearchResults from "./SearchResults";
 
-export default function SearchBar({ players }) {
+export default function SearchBar({ players, results, setResults }) {
   const [search, setSearch] = useState("");
-
+ 
   function handleSearch() {
-    const result = players.filter((player) =>
+   results = players.filter((player) =>
       player.name.toLowerCase().includes(search.toLowerCase())
     );
-    console.log(result);
+    setResults(results);
+    console.log(results);
   }
 
   function handleChange(event) {
@@ -33,6 +37,9 @@ export default function SearchBar({ players }) {
           />
           <button type="submit">Search for a Puppy</button>
         </form>
+        <div>
+         
+        </div>
       </div>
     </>
   );
