@@ -13,7 +13,7 @@ export default function SinglePlayer({ player, getData }) {
 
   function handleDetails(){
     setselectedPlayerId(player.id)
-    console.log(player.id)
+    // console.log(player.id)
   }
 
   async function handleClose() {

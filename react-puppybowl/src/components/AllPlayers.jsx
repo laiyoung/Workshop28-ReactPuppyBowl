@@ -1,11 +1,8 @@
 import React from "react";
 import SinglePlayer from "./SinglePlayer";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-
-export default function AllPlayers({players, getData}) {
-
-
+export default function AllPlayers({ players, getData }) {
   useEffect(() => {
     getData();
   }, []);
@@ -14,11 +11,7 @@ export default function AllPlayers({players, getData}) {
     <div className="article">
       {players.map((player) => {
         return (
-          <SinglePlayer
-            key={player.id}
-            player={player}
-            getData = {getData} 
-          />
+          <SinglePlayer key={player.id} player={player} getData={getData} />
         );
       })}
     </div>

@@ -8,7 +8,6 @@ import SearchBar from "./components/SearchBar";
 import { getPlayers } from "./api";
 import SearchResults from "./components/SearchResults";
 
-
 function App() {
   const [players, setPlayers] = useState([]);
   const [results, setResults] = useState([]);
@@ -46,7 +45,10 @@ function App() {
               />
             }
           />
-          <Route path="/search-results" element={<SearchResults results = {results} />} />
+          <Route
+            path="/search-results"
+            element={<SearchResults results={results} />}
+          />
         </Routes>
       </div>
     </>

@@ -63,5 +63,28 @@ selectedContact ? (
     ): (<div>No Puppies were found with the name: {search} </div>)
 </div>
 
+{/* <div> 
+            <div className="player-card">
+              <h3>{foundPlayer.name}</h3>
+              <img src={foundPlayer.imageUrl} alt={foundPlayer.name} />
+              <p>Player ID: {foundPlayer.id} </p>
+              <p>Breed: {foundPlayer.breed} </p>
+              <p>Status: {foundPlayer.status} </p>
+            </div>
+      </div> */}
+
   Decided to go with a ternary over the logical conjunction:
   {results && <p>{<SearchResults results = {results}/>}</p>}
+
+
+   async function getIDs() {
+    selectedIDs = results.filter((puppy) => puppy.id);
+    setSelectedIDs(selectedIDs)
+  }
+  const [selectedIDs, setSelectedIDs] = useState([])
+
+
+    const puppyIds = results.map((puppy) => puppy.id);
+        console.log (puppyIds)
+Didn't need this route:
+   {/* <Route path="/players/:id" element={<SinglePlayer />} /> */}
