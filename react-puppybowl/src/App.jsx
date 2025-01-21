@@ -3,10 +3,11 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import AllPlayers from "./components/AllPlayers";
-import SinglePlayer from "./components/SinglePlayer";
 import NewPlayerForm from "./components/NewPlayerForm";
 import SearchBar from "./components/SearchBar";
 import { getPlayers } from "./api";
+import SearchResults from "./components/SearchResults";
+
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -30,16 +31,22 @@ function App() {
       </div>
       <div>
         {" "}
-        <NewPlayerForm getData = {getData}/>
+        <NewPlayerForm getData={getData} />
       </div>
 
       <div>
         <Routes>
           <Route
             path="/"
-            element={<AllPlayers players={players} setPlayers={setPlayers} getData = {getData} />}
+            element={
+              <AllPlayers
+                players={players}
+                setPlayers={setPlayers}
+                getData={getData}
+              />
+            }
           />
-          <Route path="/players/:id" element={<SinglePlayer />} />
+          <Route path="/search-results" element={<SearchResults results = {results} />} />
         </Routes>
       </div>
     </>

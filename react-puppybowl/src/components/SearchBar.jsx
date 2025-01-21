@@ -6,14 +6,17 @@ import SearchResults from "./SearchResults";
 
 export default function SearchBar({ players, results, setResults }) {
   const [search, setSearch] = useState("");
- 
+  const navigate = useNavigate()
+
   function handleSearch() {
-   results = players.filter((player) =>
+    results = players.filter((player) =>
       player.name.toLowerCase().includes(search.toLowerCase())
     );
     setResults(results);
     console.log(results);
+    navigate("/search-results");
   }
+  
 
   function handleChange(event) {
     setSearch(event.target.value);
@@ -37,9 +40,6 @@ export default function SearchBar({ players, results, setResults }) {
           />
           <button type="submit">Search for a Puppy</button>
         </form>
-        <div>
-         
-        </div>
       </div>
     </>
   );

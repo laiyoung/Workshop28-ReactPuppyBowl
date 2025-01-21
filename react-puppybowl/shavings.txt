@@ -53,3 +53,15 @@ selectedContact ? (
       <button onClick={handleDelete}>Delete</button>
     </div>
   );
+
+
+<div>
+  {results} ? (
+    <div>
+      SearchResults results={results} />
+    </div>
+    ): (<div>No Puppies were found with the name: {search} </div>)
+</div>
+
+  Decided to go with a ternary over the logical conjunction:
+  {results && <p>{<SearchResults results = {results}/>}</p>}
